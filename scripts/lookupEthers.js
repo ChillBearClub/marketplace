@@ -112,8 +112,7 @@ const loadCollectionsData = async() => {
                 myWL.push(title);
             }
             let discordsAndBuyers = await Promise.all(buyers.map(async (buyer) => {
-                // let discord = await identityMapper.addressToDiscord(buyer);
-                let discord = "unknown"
+                let discord = await identityMapper.addressToDiscord(buyer);
                 let discordResult = discord ? discord : "Discord Unknown";
                 return {discord: discordResult, address: buyer};
             }));
@@ -158,7 +157,8 @@ function selectListing(listingKey) {
 }
 
 function updateDownload(listingKey) {
-    let filename = `Anonymice - ${listingKey} WL.csv`;
+    let headerRow = "";
+    let filename = `Chain Scouts - ${listingKey} WL.csv`;
     let wlArray = [...(projectToWL.get(listingKey))].map(x => {
         if (x.discord) {
             headerRow = "DISCORD,ADDRESS\n";
