@@ -134,10 +134,10 @@ const purchase = async(tokenAddress, id) => {
             await displayErrorMessage(`Error: Listing expired!`);
         }
         else if ((error.message).includes("Not enough tokens")) {
-            await displayErrorMessage(`Error: Not enough $CHEETH!`);
+            await displayErrorMessage(`Error: Not enough $BANANITE!`);
         }
         else if ((error.message).includes("transfer amount exceeds allowance")) {
-            await displayErrorMessage(`Error: Market not approved to spend $CHEETH!`);
+            await displayErrorMessage(`Error: Market not approved to spend $BANANITE!`);
         }
         else if ((error.message).includes("User denied transaction signature")) {
             console.log("Transaction rejected.");
