@@ -158,7 +158,7 @@ function selectListing(listingKey) {
 }
 
 function updateDownload(listingKey) {
-    let filename = `Anonymice - ${listingKey} WL.csv`;
+    let filename = `Chain Scouts - ${listingKey} WL.csv`;
     let wlArray = [...(projectToWL.get(listingKey))].map(x => {
         if (x.discord) {
             headerRow = "DISCORD,ADDRESS\n";
