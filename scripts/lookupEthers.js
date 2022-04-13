@@ -35,6 +35,7 @@ const correctChain = 1;
 
 /*********************************END CONFIG************************************/
 
+
 if (window.ethereum == undefined) {
     displayErrorMessage('Use a web3 enabled browser and connect to use lookup tool!');
 }
@@ -157,8 +158,7 @@ function selectListing(listingKey) {
 }
 
 function updateDownload(listingKey) {
-    let headerRow = "";
-    let filename = `Chain Scouts - ${listingKey} WL.csv`;
+    let filename = `Anonymice - ${listingKey} WL.csv`;
     let wlArray = [...(projectToWL.get(listingKey))].map(x => {
         if (x.discord) {
             headerRow = "DISCORD,ADDRESS\n";
@@ -171,6 +171,7 @@ function updateDownload(listingKey) {
     });
     let wlString = wlArray.join("\n");
     wlString = headerRow + wlString;
+
     $("#download-link").attr('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(wlString));
     $("#download-link").attr('download', filename);
 }
@@ -260,7 +261,7 @@ window.onload = async()=>{
     await updateCurrentChain();
     await updateInfo();
     let userAddress = await getAddress();
-    if ((await market.isAuthorized(cheethAddress, userAddress))) {
+    if (await market.isAuthorized(cheethAddress, userAddress)) {
         $("#workshop").removeClass("hidden");
         $("#workshop-mobile").removeClass("hidden");
     }
