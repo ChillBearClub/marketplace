@@ -234,8 +234,8 @@ setInterval(async()=>{
                 if (distance <= 0) {
                     let blockTime = (await provider.getBlock((await provider.getBlockNumber()))).timestamp;
                     if (blockTime > startTime) {
-                        pendingTimerPending[i] = false;
-                        $(`#timer-${id}`).html("LIVE NOW");
+                        liveTimerPending.push(true);
+                        liveListings.push(id);
                         $(`#timer-${id}`).removeClass("pending");
                     }
                     else {
