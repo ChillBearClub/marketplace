@@ -21,7 +21,9 @@
   height: 8vh;
   font-family: "IBM Plex Mono Medium";
 }
-
+.token-balance-float img {
+  height: var(--h2-font-size);
+}
 #market-section {
   display: flex;
   flex-direction: column;
@@ -123,9 +125,19 @@ h2 {
   width: 100%;
 }
 
-#live-collections button,
+#live-collections button {
+  background: rgba(20, 244, 46, 0.75);
+  /* icon glow */
+  box-shadow: 0px 0px 4px #14f42e;
+  border-radius: 4px;
+  color: white;
+  width: 100%;
+  font-size: var(--h3-font-size);
+  font-weight: 400;
+}
+
 #past-collections button {
-  width: 90%;
+  width: 100%;
 }
 
 .example {
@@ -153,14 +165,8 @@ h2 {
 }
 
 .partner-collection {
-  border-style: solid;
-  border-color: black;
-  border-radius: 15px;
-  border-width: 0.5vw;
-  width: 24%;
-  margin: 1%;
-  background-color: white;
-  color: #333333 !important;
+  border-radius: 4px;
+  background: rgba(25, 39, 69, 0.4);
   text-align: center;
   display: -webkit-box;
   display: -webkit-flex;
@@ -178,20 +184,16 @@ h2 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding: 1vw;
   position: relative;
+  padding: 24px;
 }
 
 .partner-collection {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-}
-
-.partner-collection h3 {
-  font-size: 1.8vw;
-  line-height: 1.8vw;
-  color: #333333 !important;
+  margin: 16px;
+  width: 256px;
 }
 
 .partner-collection button {
@@ -223,10 +225,6 @@ h2 {
   height: 200px;
 }
 
-.collection-info {
-  width: 90%;
-}
-
 .collection-description {
   min-height: 20%;
   padding: 2%;
@@ -234,13 +232,6 @@ h2 {
   padding-bottom: 10px;
   font-family: "IBM Plex Mono Regular", monospace;
   font-weight: 200;
-}
-
-h3 {
-  font-size: 1.5vw;
-  line-height: 1.6vw;
-  color: #333333;
-  margin-top: 1.5vw;
 }
 
 h3,
@@ -266,8 +257,10 @@ h4 {
 
 .end-time,
 .start-time {
-  font-size: 1.2vw;
+  font-size: var(--h3-font-size);
+  font-weight: 400;
   line-height: 1.3vw;
+  color: white;
 }
 
 #mint-prompt {
@@ -560,8 +553,11 @@ h4 {
   }
 
   .collection-info {
-    width: 100%;
-    margin-left: initial;
+    color: white;
+  }
+
+  .collection-info h3 {
+    font-size: var(--h3-font-size);
   }
 
   .partner-collection {
@@ -583,7 +579,7 @@ h4 {
   }
 
   .partner-collection h3 {
-    font-size: 3.8vh !important;
+    font-size: var(--h2-font-size);
     line-height: 3.9vh !important;
     margin-top: 10px;
   }
@@ -599,12 +595,6 @@ h4 {
     line-height: 3vh;
     padding-bottom: 20px;
     padding-top: 0;
-  }
-
-  .end-time,
-  .start-time {
-    font-size: 2.6vh !important;
-    line-height: 3vh !important;
   }
 
   #mint-prompt {

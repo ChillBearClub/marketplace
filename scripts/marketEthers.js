@@ -15,7 +15,7 @@
 // const etherscanBase = `https://etherscan.io/tx/`;
 // const correctChain = 1;
 // const tokenImgURL =
-//   "https://github.com/ctoonft/cheeth-market/blob/main/images/star.png?raw=true";
+//   "https://github.com/chloesli/cheeth-market-ethaliens/blob/main/images/star.png?raw=true;
 
 /*********************************************************************************/
 /***********************************DEV CONFIG************************************/
@@ -34,7 +34,7 @@ const marketAbi = () => {
 const etherscanBase = `https://rinkeby.etherscan.io/tx/`;
 const correctChain = 4;
 const tokenImgURL =
-  "https://github.com/ctoonft/cheeth-market/blob/main/images/star.png?raw=true";
+  "https://github.com/chloesli/cheeth-market-ethaliens/blob/main/images/star.png?raw=true";
 
 /*********************************END CONFIG************************************/
 
@@ -354,7 +354,7 @@ const loadCollections = async () => {
                                 <div class="collection-info">
                                     <h3><a class="clickable link" href="${projectUri}" target="_blank" style="text-decoration: none;">${
             WLinfo.title
-          }⬈</a></h3>
+          }</a></h3>
                                     <h4>${collectionPrice} <img src="${tokenImgURL}" class="token-icon">
                                     <br>
                                     <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Purchased
@@ -385,7 +385,7 @@ const loadCollections = async () => {
                                 <div class="collection-info">
                                     <h3><a class="clickable link" href="${projectUri}" target="_blank" style="text-decoration: none;">${
             WLinfo.title
-          }⬈</a></h3>
+          }</a></h3>
                                     <h4>${collectionPrice} <img src="${tokenImgURL}" class="token-icon"> <br> <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Purchased</h4>
                                     <div class="inside-text collection-description">
                                     ${WLinfo.description.replaceAll(

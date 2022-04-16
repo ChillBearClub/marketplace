@@ -158,6 +158,8 @@ p {
   background-image: url("../images/space-bg.gif");
   background-repeat: no-repeat;
   background-size: cover;
+  height: auto;
+  background-position: center center;
 }
 
 .header {
@@ -482,7 +484,6 @@ h5 {
     line-height: 2.8vh;
     padding: 5px;
     border-width: 5px;
-    min-height: 9vh;
   }
 
   p {

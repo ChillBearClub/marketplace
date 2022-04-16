@@ -3,7 +3,7 @@ const ethers = require("ethers");
 const infuraKey = process.env.INFURA_KEY;
 const provider = new ethers.providers.InfuraProvider("mainnet", infuraKey);
 const tokenImgURL =
-  "https://github.com/saintmaxi/cheeth-market/blob/main/images/star.png?raw=true";
+  "https://github.com/chloesli/cheeth-market-ethaliens/blob/main/images/star.png?raw=true";
 
 const cheethAddress = "0x54C4419b7be48889097a70Ef6Bdc47feAC54AEF5";
 
@@ -70,7 +70,7 @@ const getCollections = async () => {
                                 <div class="collection-info">
                                     <h3><a class="clickable link" href="${projectUri}" target="_blank" style="text-decoration: none;">${
             WLinfo.title
-          }⬈</a></h3>
+          }</a></h3>
                                     <h4>${collectionPrice} <img src="${tokenImgURL}" class="token-icon">
                                     <br>
                                     <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Purchased
@@ -102,7 +102,7 @@ const getCollections = async () => {
                                 <div class="collection-info">
                                     <h3><a class="clickable link" href="${projectUri}" target="_blank" style="text-decoration: none;">${
             WLinfo.title
-          }⬈</a></h3>
+          }</a></h3>
                                     <h4>${collectionPrice} <img src="${tokenImgURL}" class="token-icon"> <br> <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Purchased</h4>
                                     <div class="inside-text collection-description">
                                     ${WLinfo.description.replaceAll(
