@@ -15,7 +15,7 @@
 // const etherscanBase = `https://etherscan.io/tx/`;
 // const correctChain = 1;
 // const tokenImgURL =
-//   "https://github.com/ctoonft/cheeth-market/blob/main/images/cheethv2.png?raw=true";
+//   "https://github.com/ctoonft/cheeth-market/blob/main/images/star.png?raw=true";
 
 /*********************************************************************************/
 /***********************************DEV CONFIG************************************/
@@ -34,7 +34,7 @@ const marketAbi = () => {
 const etherscanBase = `https://rinkeby.etherscan.io/tx/`;
 const correctChain = 4;
 const tokenImgURL =
-  "https://github.com/ctoonft/cheeth-market/blob/main/images/cheethv2.png?raw=true";
+  "https://github.com/ctoonft/cheeth-market/blob/main/images/star.png?raw=true";
 
 /*********************************END CONFIG************************************/
 
@@ -424,8 +424,8 @@ const loadCollections = async () => {
   $("#past-collections").empty();
   $("#live-collections").append(liveJSX);
   $("#past-collections").append(pastJSX);
-  $("#num-live").html(`<br>(${numLive})`);
-  $("#num-past").html(`<br>(${numPast})`);
+  $("#num-live").html(`(${numLive})`);
+  $("#num-past").html(`(${numPast})`);
 
   if (numLive > 3 && $("#live-button").hasClass("active")) {
     $("#scroll-indicator").removeClass("hidden");
