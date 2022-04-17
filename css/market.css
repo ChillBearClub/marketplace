@@ -646,7 +646,6 @@ a {
 
 @media screen and (min-width: 1900px) {
   .collection-img {
-    width: 256px;
-    height: 256px;
+    width: 100%;
   }
 }

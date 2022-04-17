@@ -42,7 +42,7 @@ h3 {
 #top {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   color: white !important;
   font-family: "IBM Plex Mono Medium", sans-serif;
   padding: 32px 32px 0px 32px;
@@ -62,10 +62,7 @@ h3 {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  width: 40%;
-  font-size: 3vw;
-  line-height: 3vw;
-  text-align: center;
+  flex-grow: 1;
 }
 
 #title {
