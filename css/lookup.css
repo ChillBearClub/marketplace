@@ -1,112 +1,189 @@
 h1 {
-    color: #333333 !important;
-    border-bottom: solid .5vw #333333;
-    padding-bottom: .5vw;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    margin-bottom: 0 !important;
+  /* Header 2 */
+  font-weight: 400;
+  font-size: var(--h1-font-size);
+  line-height: 40px;
+  margin-bottom: 32px;
+  /* identical to box height */
+
+  text-align: right;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+
+  color: #ffffff;
 }
 
 h2 {
-    padding-top: 1.5vw !important;
-    padding-bottom:1.5vw !important;
+  font-size: var(--h2-font-size);
+  line-height: var(--h2-font-size);
+  font-weight: 400;
 }
 
 #lookup {
-    width: 70%;
-    color: #333333 !important;
+  width: 70%;
 }
 
 #your-wl-spots {
-    font-size: 1.6vw;
-    line-height: 2vw;
+  background: rgba(18, 21, 39, 0.75);
+  border-radius: 4px;
+  padding: 16px;
+  width: 100%;
+  font-size: var(--h3-font-size);
+  margin-top: 32px;
+  margin-bottom: 32px;
 }
 
 #cheeth-allocation {
-    border-top: solid .5vw #333333;
-    padding-top: .5vw;
+  font-size: var(--h2-font-size);
+  line-height: var(--h2-font-size);
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 32px;
 }
 
 #wl-section {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-top: 1.5vw !important;
-    border-top: solid .5vw #333333;
-    width: 100%;
-    min-height: 20vh;
-    overflow-y: scroll;
-    margin: auto;
-    text-align: center;
-    padding-top: 1.5vw;
-    padding-bottom: 1.5vw;
-    font-size: 1.2vw;
-    line-height: 1.2vw;
+  width: 100%;
+  background: rgba(18, 21, 39, 0.75);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  font-size: var(--h3-font-size);
+  line-height: var(--h3-font-size);
+  margin-top: 24px;
+  padding: 16px;
+  overflow: auto;
+}
+
+#wl-section > .wl-row:nth-of-type(odd) {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.wl-row {
+  display: flex;
+  width: 100%;
+  padding: 16px;
+  font-size: var(--h3-font-size);
+  border-radius: 4px;
+}
+
+.wl-discord {
+  flex-grow: 1;
+  text-align: left;
+  margin-right: 8px;
+}
+
+.wl-address {
+  text-align: right;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 select {
-    text-align: center;
-    font-size: 1.5vw;
-    line-height: 2vw;
-    width: 70%;
-    margin-bottom: 2vw;
+  text-align: center;
+  font-size: 1.5vw;
+  line-height: 2vw;
+  width: 70%;
+  margin-bottom: 2vw;
 }
 
 #spacer {
-    height: 2vw;
+  height: 2vw;
+}
+
+#listing-select {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
+  padding: 8px 16px;
+  flex-grow: 1;
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: black;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  text-align: left;
+  margin-right: 16px;
+}
+
+.select-download-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background: rgba(18, 21, 39, 0.75);
+  border-radius: 4px;
+  padding: 16px;
 }
 
 #download-link {
-    width: 5%;
+  padding: 8px 48px;
+  background-color: var(--button-green);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  font-size: 2vh;
+  transition: all 0.3s ease-in-out;
+}
+
+#download-link:hover {
+  background: white;
+  color: black;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 
 #download-button {
-    width: 3.5%;
+  width: 3.5%;
 }
 
+@media screen and (max-width: 767px) {
+  #lookup- .select-download-container {
+    flex-direction: column;
+  }
+  #listing-select {
+    width: 100%;
+  }
+  .lookup-div {
+    padding: 0px 32px;
+  }
+  .wl-row {
+    flex-direction: column;
+  }
+  .wl-discord {
+    text-align: center;
+  }
+  .wl-address {
+    text-align: center;
+  }
+}
 @media screen and (max-width: 991px) {
+  #lookup {
+    width: 97%;
+  }
 
-    #lookup {
-        width: 97%;
-    }
+  #your-wl-spots {
+    font-size: 3.2vh;
+    line-height: 3.4vh;
+  }
 
-    #your-wl-spots {
-        font-size: 3.2vh;
-        line-height: 3.4vh;
-    }
+  #cheeth-allocation {
+    border-top: solid 5px white;
+    padding-top: 4vh !important;
+  }
 
-    h1 {
-        border-bottom: solid 5px #333333;
-        padding-bottom: 4vh;
-    }
+  h2 {
+    margin-top: 4vh !important;
+    margin-bottom: 4vh !important;
+  }
 
-    #cheeth-allocation {
-        border-top: solid 5px #333333;
-        padding-top: 4vh !important;
-    }
+  select {
+    font-size: 2vh;
+    line-height: 2vh;
+    width: 90%;
+    margin-bottom: 4vh;
+  }
 
-    h2 {
-        margin-top: 4vh !important;
-        margin-bottom:4vh !important;
-    }
-
-    #wl-section {
-        width: 100%;
-        border-top: solid 5px #333333;
-        padding-top:4vh !important;
-        font-size: 2vh;
-        line-height: 2.2vh;
-    }
-
-    select {
-        font-size: 2vh;
-        line-height: 2vh;
-        width: 90%;
-        margin-bottom: 4vh;
-    }
-
-    #spacer {
-        height: 2vh;
-    }
-
-
+  #spacer {
+    height: 2vh;
+  }
 }

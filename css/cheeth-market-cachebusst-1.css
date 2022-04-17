@@ -3,7 +3,6 @@
 select {
   border-style: solid;
   background-color: #333333;
-  color: #f8e4a9 !important;
   border-width: 0.5vw;
   border-radius: 5px;
   border: none;
@@ -31,7 +30,7 @@ body {
 
 .token-icon {
   display: inline;
-  width: 1.8vw !important;
+  width: var(--h3-font-size);
 }
 
 .hidden {
@@ -56,17 +55,13 @@ h2 {
 
 h1 {
   font-family: var(--primary-font);
-  color: black;
-  font-weight: 600;
-  font-size: 3vw !important;
-  line-height: 3vw !important;
+  color: white;
 }
 
 p {
   text-align: justify;
   font-weight: bold;
-  font-size: 1.4vw !important;
-  line-height: 1.7vw !important;
+  font-size: var(--body-font-size);
 }
 
 #desktop-wallet-connect-div {
@@ -95,6 +90,14 @@ p {
   margin-left: var(--nav-margin);
   margin-right: var(--nav-margin);
   font-size: var(--h3-font-size);
+  transition: all 0.3s ease-in-out;
+}
+
+#account:hover,
+#discord:hover {
+  background-color: white;
+  color: black;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 
 #discord {
@@ -103,6 +106,7 @@ p {
   color: white;
   height: var(--nav-btn-size);
   font-size: var(--h3-font-size);
+  transition: all 0.3s ease-in-out;
 }
 
 #discord.success,
@@ -123,29 +127,33 @@ p {
 
 #discord.failure:hover,
 #discord-mobile.failure:hover {
-  background-color: #f72119 !important;
+  background-color: white !important;
 }
 
 .button.loading,
 .button.connect {
-  background-color: #f1c94b !important;
-  color: #333333 !important;
+  background-color: white !important;
+  color: black !important;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 
 #account.connected:hover {
-  background-color: #f1c94b !important;
+  background-color: white !important;
+  color: black !important;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
   cursor: default;
 }
 
 .button.loading:hover {
-  background-color: #f1c94b !important;
-  color: #333333 !important;
+  background-color: white !important;
+  color: black !important;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 
 .button.connect:hover {
-  background-color: #f1c94b !important;
-  color: #333333 !important;
-  cursor: pointer;
+  background-color: white !important;
+  color: black !important;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 
 .body {
@@ -153,7 +161,7 @@ p {
   font-family: var(--primary-font);
   background-size: auto;
   background-repeat: repeat;
-  color: black;
+  color: white;
   cursor: default !important;
   background-image: url("../images/space-bg.gif");
   background-repeat: no-repeat;
@@ -197,6 +205,29 @@ p {
   align-items: center;
 }
 
+.collection-info {
+  color: white;
+  width: 100%;
+  padding-bottom: 16px;
+}
+
+.collection-info h3 {
+  font-size: var(--h3-font-size);
+  color: var(--bright-green) !important;
+}
+
+.collection-info h4 {
+  font-size: var(--h3-font-size);
+  color: white;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.collection-info .link {
+  color: var(--bright-green) !important;
+  font-weight: 400;
+}
+
 .button {
   touch-action: manipulation;
   line-height: 1.7vw;
@@ -207,7 +238,7 @@ p {
 }
 
 .link {
-  color: #333333;
+  color: white;
   text-decoration: none;
 }
 
@@ -217,7 +248,6 @@ p {
 }
 
 .title-link:hover {
-  color: #f8e4a9 !important;
 }
 
 .button:hover {
@@ -448,7 +478,7 @@ h5 {
 @media screen and (max-width: 991px) {
   .token-icon {
     display: inline;
-    width: 2.8vh !important;
+    width: var(--h3-font-size);
   }
 
   .box {
@@ -483,7 +513,6 @@ h5 {
   .button {
     line-height: 2.8vh;
     padding: 5px;
-    border-width: 5px;
   }
 
   p {
@@ -501,12 +530,6 @@ h5 {
     display: block !important;
   }
 
-  #mobile-account {
-    width: 80%;
-    background-color: #f1c94b !important;
-    color: #333333 !important;
-  }
-
   #about {
     padding: 0;
   }
@@ -515,11 +538,6 @@ h5 {
     padding-top: 10px;
     padding-right: 40px;
     padding-left: 40px;
-  }
-
-  .header-menu {
-    font-size: 2.5vh;
-    margin: 5px;
   }
 
   .box3 {
@@ -552,8 +570,7 @@ h5 {
   }
 
   h1 {
-    font-size: 5.4vh !important;
-    line-height: 5.4vh !important;
+    font-size: var(--h1-font-size);
   }
 
   #error-popup,

@@ -7,23 +7,22 @@
   position: fixed;
   right: 30px;
   bottom: 30px;
-  font-size: 1.5vw;
+  font-size: var(--h3-font-size);
+  text-transform: uppercase;
   z-index: 10;
   display: flex;
   align-items: center;
-  padding: 15px;
-  background: white;
+  padding: 16px;
   color: black;
-  border: 0.5vw solid black;
-  border-radius: 15px;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  height: 8vh;
-  font-family: "IBM Plex Mono Medium";
+  background: #ffffff;
+  border: 1px solid #14f42e;
+  box-sizing: border-box;
+  /* icon glow */
+
+  box-shadow: 0px 0px 4px #14f42e;
+  border-radius: 4px;
 }
-.token-balance-float img {
-  height: var(--h2-font-size);
-}
+
 #market-section {
   display: flex;
   flex-direction: column;
@@ -31,35 +30,56 @@
 }
 
 /* Approval section */
-
-#approval {
-  margin: 0;
-  width: 45%;
-  margin: auto;
-  margin-top: 1vw;
-  margin-bottom: 1vw;
-  font-family: "IBM Plex Mono Medium";
+#approval-container {
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  background: #2872ce;
 }
 
+#approval {
+  font-size: var(--h3-font-size);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 16px 32px;
+  background: #2872ce;
+}
+
+.approval-info {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-right: 8px;
+  flex-grow: 1;
+}
+
+#approval i {
+  font-size: 4vh;
+}
 #approval h2 {
   display: inline;
+  font-size: var(--h3-font-size);
+  text-align: left;
+  margin-left: 16px;
+  font-weight: 400;
+  flex-grow: 1;
+  margin-bottom: 0px;
+  line-height: var(--h3-font-size);
 }
 
 #approval-button {
   background-color: white;
   color: black;
-  display: inline;
-  margin-top: 1vw;
-  margin-bottom: 1vw;
-  width: 90%;
+  padding: 0px 16px;
+  background: #ffffff;
+  border-radius: 4px;
+  height: 48px;
+  padding: 8px 48px;
 }
 
 #approval h1 {
   margin: 0;
-}
-
-h2 {
-  color: #333333;
 }
 
 /* End approval section */
@@ -71,6 +91,14 @@ h2 {
 .active {
   background: #12b92d !important;
   color: white;
+}
+
+#selector-div button {
+  transition: all 0.3s ease-in-out;
+  background-color: rgba(255, 255, 255, 0);
+}
+#selector-div button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 #selector-div {
@@ -85,7 +113,7 @@ h2 {
   border: 1px solid #0df732;
   box-sizing: border-box;
   border-radius: 4px;
-  margin-bottom: 64px;
+  margin-bottom: 32px;
 }
 
 #selector-div button {
@@ -134,10 +162,18 @@ h2 {
   width: 100%;
   font-size: var(--h3-font-size);
   font-weight: 400;
+  transition: all 0.3s ease-in-out;
 }
-
+#live-collections button:hover {
+  background-color: white;
+  color: black;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
 #past-collections button {
   width: 100%;
+  color: white;
+  font-size: var(--h3-font-size);
+  font-weight: 400;
 }
 
 .example {
@@ -215,44 +251,22 @@ h2 {
 }
 
 .collection-img {
-  border-style: solid;
-  border-color: black;
-  border-radius: 15px;
-  border-width: 0.5vw;
-  background-color: #333333;
-  width: 30%;
-  width: 200px;
-  height: 200px;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 240px;
 }
 
 .collection-description {
-  min-height: 20%;
-  padding: 2%;
-  color: #333333 !important;
-  padding-bottom: 10px;
-  font-family: "IBM Plex Mono Regular", monospace;
-  font-weight: 200;
-}
-
-h3,
-h4 {
-  margin: 0;
+  color: white;
+  font-size: var(--body-font-size);
 }
 
 a {
-  color: #333333;
-}
-
-h4 {
-  font-size: 1.4vw;
-  line-height: 1.8vw;
-  color: #333333;
+  color: white;
 }
 
 .inside-text {
-  font-size: 1.2vw;
-  line-height: 1.3vw;
-  padding-bottom: 20px;
+  padding-bottom: 16px;
 }
 
 .end-time,
@@ -261,6 +275,7 @@ h4 {
   font-weight: 400;
   line-height: 1.3vw;
   color: white;
+  padding-bottom: 8px;
 }
 
 #mint-prompt {
@@ -373,12 +388,13 @@ h4 {
 }
 
 .purchased {
-  background-color: #9c9696 !important;
+  background-color: #0c0c0c !important;
+  border: 1px solid white;
 }
 
 .purchased:hover {
-  background-color: #9c9696 !important;
-  color: #f8e4a9 !important;
+  background-color: #0c0c0c !important;
+  border: 1px solid white;
 }
 
 .cover button:hover {
@@ -467,7 +483,8 @@ h4 {
 #scroll-indicator {
   -webkit-animation: bounce 1.3s infinite;
   animation: bounce 1.3s infinite;
-  color: #333333 !important;
+  color: #333333;
+  display: none !important;
 }
 
 #no-live-msg {
@@ -490,87 +507,58 @@ h4 {
     width: 3vh;
   }
 
-  #live-collections button,
-  #past-collections button {
-    width: 90%;
-  }
-
   .token-balance-float {
     position: fixed;
     bottom: 20px;
     left: 50%;
     transform: translate(-50%, 0);
-    width: 80%;
+    width: calc(100% - 64px);
     margin: auto;
-    font-size: 2.5vh;
+    font-size: var(--h3-font-size);
     z-index: 10;
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
-    padding: 15px;
-    background: white;
-    color: black;
-    border: 5px solid black;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-      0 10px 10px -5px rgba(0, 0, 0, 0.04);
     height: initial;
+
+    color: black;
+    background: #ffffff;
+    border: 1px solid #14f42e;
+    box-sizing: border-box;
+    /* icon glow */
+
+    box-shadow: 0px 0px 4px #14f42e;
+    border-radius: 4px;
   }
 
   /* Approval section*/
-
   #approval {
-    width: 90%;
+    flex-direction: column;
   }
 
-  #approval h1 {
-    font-size: 4.5vh !important;
-    line-height: 4.5vh !important;
+  #approval button {
+    width: 100%;
+    margin-top: 16px;
   }
-
-  #approval-button {
-    width: 90%;
-    margin-top: 2vh;
-  }
-
   /* End approval section*/
+  #selector-div {
+    width: calc(100% - 64px);
+    align-items: stretch;
+  }
 
   #selector-div button {
-    font-size: 3.4vh;
-    line-height: 3.4vh;
-    padding: 2vh;
-    width: 45%;
-  }
-
-  .navbar-container {
-    width: 50% !important;
-    padding: 0;
-  }
-
-  .partner-collection {
-    width: 90%;
-    padding: 15px;
-  }
-
-  .collection-info {
-    color: white;
-  }
-
-  .collection-info h3 {
-    font-size: var(--h3-font-size);
+    padding: 8px;
+    flex-grow: 1;
   }
 
   .partner-collection {
     border-width: 5px;
     margin-top: 40px;
+    width: calc(100% - 64px);
   }
 
   .collection-img {
-    border-width: 5px;
-    width: 200px;
-    height: 200px;
-    min-width: 0px !important;
-    min-height: 0px !important;
   }
 
   .collection-description {
@@ -578,33 +566,10 @@ h4 {
     padding: 2%;
   }
 
-  .partner-collection h3 {
-    font-size: var(--h2-font-size);
-    line-height: 3.9vh !important;
-    margin-top: 10px;
-  }
-
-  h4 {
-    font-size: 3vh;
-    line-height: 3.1vh;
-    color: #333333;
-  }
-
-  .inside-text {
-    font-size: 2.7vh;
-    line-height: 3vh;
-    padding-bottom: 20px;
-    padding-top: 0;
-  }
-
   #mint-prompt {
     width: 100vw;
     height: 90vh;
     font-size: 2.7vh;
-  }
-
-  #header-div {
-    height: 7% !important;
   }
 
   #max-button {
@@ -680,7 +645,7 @@ h4 {
 
 @media screen and (min-width: 1900px) {
   .collection-img {
-    width: 250px;
-    height: 250px;
+    width: 256px;
+    height: 256px;
   }
 }

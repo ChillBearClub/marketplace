@@ -34,10 +34,19 @@
 
 <body class="body">
    <div class="site-container">
+      <div class="hidden" id="approval-container" style="text-align: center;">
+         <div id="approval" style="text-align: center;">
+            <div class="approval-info">
+               <i class="fa-solid fa-circle-info"></i>
+               <h2>Before you can spend $star on whitelist spots, you must approve the market contract to spend your $STAR.</h2><br>
+            </div>
+            <button class="button" id="approval-button" onclick="approveTokenToMarket()">APPROVE</button>
+         </div>
+      </div>
    <div id="top">
       <div id="title-section" class="header">
          <div id="title">
-            <img src="./images/logo.png">
+            <a href="./index.html"><img src="./images/logo.png" /></a>
          </div>
       </div>
       <div id="header" class="header hide-on-mobile">
@@ -83,15 +92,16 @@
          </button>
       </div>
       <div id="mobile-wallet-connect-div" class="hide-on-desktop">
+         <div class="mobile-logo">
+            <img src="./images/logo.png" />
+          </div>
          <button id="mobile-account" href="#" class="button" onclick=connect()>
             <span id="mobile-account-text">CONNECT</span>
          </button>
          <button class="button" id="discord-mobile" onclick="promptForDiscord()">
-            <img id="discord-img" src="./images/dc-black.png">
-            <span id="discord-text-mobile"></span>
-            <img id="edit-img" src="./images/edit.png">
+            <i class="fa-brands fa-discord"></i>
          </button>
-         <button id="navbar" href="#" class="button" onclick="toggleMenu()"></button>
+         <button id="navbar" href="#" class="button" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
       </div>
       <div id="expand-container">
          <div id="mobile-nav-menu" class="collapsed">
@@ -117,7 +127,7 @@
                   </a>
                </div>
                <!-- <div class="header-menu" style="width: 100%;">
-                  BALANCE: <span id="mobile-balance">-</span> <img src="https://github.com/chloesli/cheeth-market-ethaliens/blob/main/images/star.png?raw=true class="token-icon">
+                  BALANCE: <span id="mobile-balance">-</span> <img src="https://github.com/chloesli/cheeth-market-ethaliens/blob/main/images/star.png?raw=true" class="token-icon">
                </div> -->
             </div>
 
@@ -152,14 +162,9 @@
          </div>
       </div>
    </div>
-   <div class="section body-section body-1 wf-section hidden" id="approval-container" style="text-align: center;">
-      <div id="approval" style="text-align: center;">
-         <h2>To spend $BANANITE on whitelist spots, approve the market contract to spend your $BANANITE.</h2><br>
-         <button class="button" id="approval-button" onclick="approveTokenToMarket()">APPROVE</button>
-      </div>
-   </div>
    <br>
    <div id="market-section" class="section body-section body-1 wf-section">
+      <h1 class="title">MARKETPLACE</h1>
       <div id="selector-div">
          <button id="live-button" class="button active" onclick="showLive()">ACTIVE LISTINGS <span id="num-live">(-)</span></button>
          <button id="past-button" class="button" onclick="showPast()">PAST LISTINGS <span id="num-past">(-)</span></button>
@@ -180,7 +185,7 @@
                <h3>???</h3>
                <h4>???/??? Purchased
                   <br>
-                  ??? <img src="https://github.com/chloesli/cheeth-market-ethaliens/blob/main/images/star.png?raw=true class="token-icon">
+                  ??? <img src="https://github.com/chloesli/cheeth-market-ethaliens/blob/main/images/star.png?raw=true" class="token-icon">
                   <br>
                   <span class="end-time">Ends MM/DD/YYYY HH:MM AM</span>
                   </h4>
@@ -200,7 +205,7 @@
                <h3>???</h3>
                <h4>???/??? Purchased
                   <br>
-                  ??? <img src="https://github.com/chloesli/cheeth-market-ethaliens/blob/main/images/star.png?raw=true class="token-icon">
+                  ??? <img src="https://github.com/chloesli/cheeth-market-ethaliens/blob/main/images/star.png?raw=true" class="token-icon">
                   <br>
                   <span class="end-time">Ends MM/DD/YYYY HH:MM AM</span>
                   </h4>
@@ -213,7 +218,7 @@
    </div>
    </div>
    <div class="token-balance-float">
-      <div>Balance: <span id="token-balance">-</span> <img src="https://github.com/chloesli/cheeth-market-ethaliens/blob/main/images/star.png?raw=true class="token-icon"></div> 
+      <div>Balance: <span id="token-balance">-</span> <img src="https://github.com/chloesli/cheeth-market-ethaliens/blob/main/images/star.png?raw=true" class="token-icon"></div> 
       <svg id="clear-cache" onclick="clearPendingTxs()" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="Layer_1" version="1.1" viewBox="0 0 32 32"><path fill="#333333" d="M28 16c-1.219 0-1.797.859-2 1.766C25.269 21.03 22.167 26 16 26c-5.523 0-10-4.478-10-10S10.477 6 16 6c2.24 0 4.295.753 5.96 2H20c-1.104 0-2 .896-2 2s.896 2 2 2h6c1.104 0 2-.896 2-2V4c0-1.104-.896-2-2-2s-2 .896-2 2v.518C21.733 2.932 18.977 2 16 2 8.268 2 2 8.268 2 16s6.268 14 14 14c9.979 0 14-9.5 14-11.875C30 16.672 28.938 16 28 16z"/></svg>   
    </div>
    <div id="pending-transactions"></div>

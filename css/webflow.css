@@ -195,20 +195,7 @@ html[data-w-dynpage] [data-w-cloak] {
   opacity: 1 !important;
   vertical-align: middle !important;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-h1 {
-  font-size: 38px;
-  line-height: 44px;
-  margin: 1vw;
-}
+
 h3 {
   line-height: 30px;
   margin-top: 20px;

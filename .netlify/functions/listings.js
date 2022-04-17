@@ -71,7 +71,10 @@ const getCollections = async () => {
                                     <h3><a class="clickable link" href="${projectUri}" target="_blank" style="text-decoration: none;">${
             WLinfo.title
           }</a></h3>
-                                    <h4>${collectionPrice} <img src="${tokenImgURL}" class="token-icon">
+                                    <h4><span style="display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    gap: 11px;">${collectionPrice} <img src="${tokenImgURL}" class="token-icon"></span>
                                     <br>
                                     <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Purchased
                                     <br>
@@ -103,7 +106,10 @@ const getCollections = async () => {
                                     <h3><a class="clickable link" href="${projectUri}" target="_blank" style="text-decoration: none;">${
             WLinfo.title
           }</a></h3>
-                                    <h4>${collectionPrice} <img src="${tokenImgURL}" class="token-icon"> <br> <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Purchased</h4>
+                                    <h4><span style="display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    gap: 11px;">${collectionPrice} <img src="${tokenImgURL}" class="token-icon"></span> <br> <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Purchased</h4>
                                     <div class="inside-text collection-description">
                                     ${WLinfo.description.replaceAll(
                                       "\n",

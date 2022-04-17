@@ -1,37 +1,46 @@
-#modify-input input, #modify-input textarea, #create-input input, #create-input textarea {
-    width: 85%;
-    font-size: .9vw;
-    line-height: 1.5vw;
-    border: solid black .25vw;
+#modify-input input,
+#modify-input textarea,
+#create-input input,
+#create-input textarea {
+  width: 100%;
+  font-size: var(--body-font-size);
+  line-height: var(--body-font-size);
+  border: solid black 0.25vw;
+  color: black;
+  padding: 8px;
 }
-
+#create-input.partner-collection {
+  width: 356px;
+}
 textarea {
-    resize: vertical;
+  resize: vertical;
 }
 
-#modify-input a, #create-input a {
-    font-size: .9vw;
-    line-height: 1.5vw;
+#modify-input a,
+#create-input a {
+  font-size: 0.9vw;
+  line-height: 1.5vw;
 }
 
 #listing-select-div {
-    padding-top: 15px !important;
-    padding-bottom: 15px !important;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
 }
 
 @media screen and (max-width: 767px) {
+  #modify-input input,
+  #modify-input textarea,
+  #create-input input,
+  #create-input textarea {
+    width: 85%;
+    font-size: 2vh;
+    line-height: 2vh;
+    border: solid black 2px;
+  }
 
-    #modify-input input, #modify-input textarea, #create-input input, #create-input textarea {
-        width: 85%;
-        font-size: 2vh;
-        line-height: 2vh;
-        border: solid black 2px;
-    }
-
-    #modify-input a, #create-input a {
-        font-size: 2vh;
-        line-height: 2vh;
-    }
-
-
+  #modify-input a,
+  #create-input a {
+    font-size: 2vh;
+    line-height: 2vh;
+  }
 }

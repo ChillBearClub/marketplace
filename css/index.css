@@ -1,7 +1,7 @@
 :root {
   --main-bg-color: #447cfc;
   --primary-font: "VT323", monospace;
-  --heading1-font-size: 64px;
+  --h1-font-size: 64px;
   --h2-font-size: 40px;
   --h3-font-size: 20px;
   --body-font-size: 16px;
@@ -91,8 +91,23 @@ h3 {
   line-height: 2vw;
 }
 
+.title {
+  /* Header 2 */
+  font-weight: 400;
+  font-size: var(--h1-font-size);
+  line-height: 40px;
+  margin-bottom: 32px;
+  /* identical to box height */
+
+  text-align: right;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+  text-align: center;
+}
+
 .header-menu {
-  font-size: 1.3vw;
   line-height: 1.3vw;
   letter-spacing: 3px;
   text-align: center;
@@ -109,6 +124,13 @@ h3 {
   align-items: center;
   padding: 8px 48px;
   height: var(--nav-btn-size);
+  transition: all 0.3s ease-in-out;
+}
+
+.header-menu a:hover {
+  color: #232323;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.95);
 }
 
 #socials {
@@ -275,6 +297,10 @@ h3 {
 }
 
 @media screen and (max-width: 991px) {
+  .title {
+    font-size: var(--h2-font-size);
+  }
+
   .left-number,
   .right-number {
     display: none;
@@ -295,22 +321,7 @@ h3 {
   }
 
   #title-section {
-    width: 100%;
-    border-right: none;
-    font-size: 5vh;
-    line-height: 5vh;
-    background-color: #333333;
-    padding: 2%;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  }
-
-  #title img {
-    width: 15%;
-  }
-
-  #title-section {
-    font-size: 4vh !important;
+    display: none;
   }
 
   #socials {
@@ -334,14 +345,16 @@ h3 {
     border-width: 5px;
   }
 
-  #title {
+  #mobile-nav-menu #header {
+    width: calc(100% - 64px);
+  }
+
+  #mobile-nav-menu .header-menu {
     width: 100%;
-    letter-spacing: 3px;
-    text-align: center;
+    margin-bottom: 8px;
   }
 
   #header {
-    width: 100%;
     border-left: none;
     display: flex;
     flex-direction: row;
@@ -351,7 +364,9 @@ h3 {
     padding-top: 5px;
     padding-bottom: 5px;
   }
-
+  .header-menu a {
+    margin-left: 0px;
+  }
   /* Mobile Navbar animations */
 
   #expand-container {
@@ -361,13 +376,11 @@ h3 {
   #mobile-nav-menu {
     margin-top: -100%;
     transition: all 0.4s;
-    background-color: #333333;
+    display: flex;
+    justify-content: center;
   }
 
   #mobile-nav-menu.expanded {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
     margin-top: 0;
   }
 
@@ -422,42 +435,60 @@ h3 {
 
   /* end mobile navbar animations*/
 
-  .header-menu {
-    font-size: 4vh;
-    line-height: 4vh;
-    text-align: left;
-  }
-
-  #navbar {
-    touch-action: manipulation;
-    width: 10%;
-    background-color: #f1c94b !important;
-    background-image: url("../images/burger.png");
-    background-size: 100% 100%;
-  }
-
   #mobile-wallet-connect-div {
     display: flex !important;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
-    background-color: #333333;
+    justify-content: center;
     text-align: center;
-    padding-top: 5px;
-    padding-bottom: 20px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    padding: 16px 32px;
   }
 
-  #mobile-wallet-connect-div .button {
-    min-height: 6vh;
+  .mobile-logo img {
+    height: 48px;
   }
 
-  #mobile-account,
+  .mobile-logo {
+    letter-spacing: 5px;
+    flex-grow: 1;
+    display: flex;
+  }
+
+  #mobile-wallet-connect-div button {
+    margin-right: 8px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #mobile-wallet-connect-div button:last-of-type {
+    margin-right: 0px;
+  }
+
+  #mobile-account {
+    width: fit-content;
+    padding: 8px;
+    height: 48px;
+    background: var(--button-green);
+  }
+
   #discord-mobile {
-    background-color: #f1c94b !important;
-    color: black !important;
-    width: 40%;
+    width: 48px;
+    height: 48px;
+    background-color: var(--violet);
+    font-size: 20px;
+  }
+
+  #navbar {
+    touch-action: manipulation;
+    width: 48px;
+    height: 48px;
+    background: rgba(18, 21, 39, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+    color: white;
+    font-size: 20px;
   }
 
   /* end header/navbar styling */
