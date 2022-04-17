@@ -115,7 +115,7 @@ select {
 }
 
 #download-link {
-  padding: 8px 48px;
+  padding: 8px 16px;
   background-color: var(--button-green);
   color: white;
   display: flex;

@@ -52,6 +52,7 @@
   align-items: flex-start;
   margin-right: 8px;
   flex-grow: 1;
+  align-items: center;
 }
 
 #approval i {
