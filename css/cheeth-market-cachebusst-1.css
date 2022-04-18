@@ -74,14 +74,6 @@ p {
   padding: 8px 48px;
 }
 
-#discord-img {
-  height: 1.8vw;
-}
-
-#edit-img {
-  height: 1.4vw;
-}
-
 #account {
   text-align: center;
   background-color: var(--button-green);
@@ -129,7 +121,10 @@ p {
 #discord-mobile.failure:hover {
   background-color: white !important;
 }
-
+.button.loading {
+  width: calc(100% - 32px) !important;
+  padding: 16px;
+}
 .button.loading,
 .button.connect {
   background-color: white !important;
@@ -641,14 +636,6 @@ h5 {
     border-width: 3px;
     font-size: 3vh !important;
     width: 90%;
-  }
-
-  #discord-img {
-    height: 3.3vh;
-  }
-
-  #edit-img {
-    height: 2.3vh;
   }
 }
 
