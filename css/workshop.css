@@ -9,9 +9,18 @@
   color: black;
   padding: 8px;
 }
-#create-input.partner-collection {
-  width: 356px;
+#create-input.partner-collection,
+#modify-input {
+  margin-top: 0px;
+  width: calc(100% - 556px);
+  max-width: 600px;
+  margin-top: 0px;
 }
+
+#create-template {
+  margin-top: 0px;
+}
+
 textarea {
   resize: vertical;
 }
@@ -23,10 +32,24 @@ textarea {
 }
 
 #listing-select-div {
-  padding-top: 15px !important;
-  padding-bottom: 15px !important;
+  padding: 0px !important;
+  display: flex;
+  width: calc(100% - 64px);
 }
 
+#listing-select {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
+  padding: 8px 16px;
+  flex-grow: 1;
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: black;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  text-align: left;
+}
 @media screen and (max-width: 767px) {
   #modify-input input,
   #modify-input textarea,
@@ -37,7 +60,10 @@ textarea {
     line-height: 2vh;
     border: solid black 2px;
   }
-
+  #create-input.partner-collection,
+  #modify-input {
+    width: 100%;
+  }
   #modify-input a,
   #create-input a {
     font-size: 2vh;

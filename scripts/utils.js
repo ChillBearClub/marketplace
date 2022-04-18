@@ -125,12 +125,17 @@ const promptForDiscord = async () => {
     let discordString = currentDiscord ? currentDiscord : "None";
     let fakeJSX = `<div id="discord-popup">
                          <div id="content">
-                          <p>Enter Discord User ID to associate with purchases.</p>
+                          <h2>> Enter Discord User ID to associate with purchases.</h2>
                           <p>Current: ${discordString}</p>
                           <br>
                           <input id="discord-name" type="text" spellcheck="false" value="" placeholder="user#1234">
                           <br>
-                          <button class="button" onclick="setDiscord()"">SET DISCORD</button>
+                          <div class="discord-popup-buttons-container">
+                          <button class="button cancel" onclick="$('#discord-popup').remove();$('#block-screen-discord').remove()">
+                            CANCEL
+                          </button>
+                          <button class="button set-discord" onclick="setDiscord()"">SET DISCORD</button>
+                          </div>
                          </div>
                         </div>`;
     $("body").append(fakeJSX);
