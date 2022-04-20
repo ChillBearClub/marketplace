@@ -442,7 +442,7 @@ const loadCollections = async () => {
 
   if (numLive == 0) {
     $("#live-collections").append(
-      "<div id='no-live-msg'><h2>No active listings.<br>Join our discord to see what's next!</h2><br><a href='https://discord.gg/chainscouts' target='_blank'><button class='button'>JOIN DISCORD</button></a></div>"
+      "<div id='no-live-msg'><h2>No active listings.<br>Join our discord to see what's next!</h2><br><a href='https://discord.gg/ethalien' target='_blank'><button class='button'>JOIN DISCORD</button></a></div>"
     );
   }
 
