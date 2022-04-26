@@ -34,6 +34,7 @@ const market = new ethers.Contract(marketAddress, marketAbi(), signer);
 // General Functions
 const connect = async () => {
   await provider.send("eth_requestAccounts", []);
+  addNetwork('web3');
 };
 const getAddress = async () => {
   try {
