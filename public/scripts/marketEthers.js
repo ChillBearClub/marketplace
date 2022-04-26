@@ -15,7 +15,7 @@ const marketAbi = () => {
 const etherscanBase = `https://polygonscan.com/tx/`;
 const correctChain = 137;
 const tokenImgURL =
-  "https://github.com/chloesli/cheeth-market-ethaliens/blob/main/images/star.png?raw=true";
+  "https://github.com/ChillBearClub/marketplace/blob/main/public/images/hunny.png?raw=true";
 
 
 if (window.ethereum == undefined) {

@@ -158,7 +158,7 @@ p {
   background-repeat: repeat;
   color: white;
   cursor: default !important;
-  background-image: url("../images/space-bg.gif");
+  background-image: url("../images/bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   height: auto;
