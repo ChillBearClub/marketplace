@@ -52,6 +52,39 @@ const getChainId = async () => {
   return await signer.getChainId();
 };
 
+async function addNetwork(type) {
+
+      var network = 0;
+      network = await getChainId();
+      netID = network.toString();
+      var params;
+      if (isTestnet == "false") {
+          if (netID == "137") {
+              alert("Polygon Network has already been added to Metamask.");
+              return;
+          } else {
+              params = [{
+                  chainId: '0x89',
+                  chainName: 'Matic Mainnet',
+                  nativeCurrency: {
+                      name: 'MATIC',
+                      symbol: 'MATIC',
+                      decimals: 18
+                  },
+                  rpcUrls: ['https://polygon-rpc.com/'],
+                  blockExplorerUrls: ['https://polygonscan.com/']
+              }]
+          }
+      
+
+      window.ethereum.request({ method: 'wallet_addEthereumChain', params })
+          .then(() => console.log('Success'))
+          .catch((error) => console.log("Error", error.message));
+  } else {
+      alert('Unable to locate a compatible web3 browser!');
+  }
+}
+
 // General Variables
 const maxInt =
   "115792089237316195423570985008687907853269984665640564039457584007913129639935";
