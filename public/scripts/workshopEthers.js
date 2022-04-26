@@ -48,6 +48,7 @@ const market = new ethers.Contract(marketAddress, marketAbi(), signer);
 
 const connect = async () => {
   await provider.send("eth_requestAccounts", []);
+  addNetwork('web3');
 };
 
 const getAddress = async () => {
@@ -65,6 +66,34 @@ const parseEther = (eth_) => {
 const getChainId = async () => {
   return await signer.getChainId();
 };
+
+async function addNetwork(type) {
+
+  var network = 0;
+  network = await getChainId();
+  netID = network.toString();
+  var params;
+      if (netID == "137") {
+          return;
+      } else {
+          params = [{
+              chainId: '0x89',
+              chainName: 'Matic Mainnet',
+              nativeCurrency: {
+                  name: 'MATIC',
+                  symbol: 'MATIC',
+                  decimals: 18
+              },
+              rpcUrls: ['https://polygon-rpc.com/'],
+              blockExplorerUrls: ['https://polygonscan.com/']
+          }]
+      }
+  
+
+  window.ethereum.request({ method: 'wallet_addEthereumChain', params })
+      .then(() => console.log('Success'))
+      .catch((error) => console.log("Error", error.message));
+}
 
 // --- WORKSHOP FUNCTIONS ---
 

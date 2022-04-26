@@ -60,7 +60,6 @@ async function addNetwork(type) {
       netID = network.toString();
       var params;
           if (netID == "137") {
-              alert("Polygon Network has already been added to Metamask.");
               return;
           } else {
               params = [{
