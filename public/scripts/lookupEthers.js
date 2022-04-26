@@ -270,7 +270,7 @@ function cachePendingTransactions() {
 function startLoading(tx) {
   let txHash = tx.hash;
   const etherscanLink = `${etherscanBase}${txHash}`;
-  const loadingDiv = `<a href="${etherscanLink}" class="etherscan-link" id="etherscan-link-${txHash}" target="_blank" rel="noopener noreferrer"><div class="loading-div" id="loading-div-${txHash}">PROCESSING<span class="one">.</span><span class="two">.</span><span class="three">.</span>​<br>CLICK FOR ETHERSCAN</div></a><br>`;
+  const loadingDiv = `<a href="${etherscanLink}" class="etherscan-link" id="etherscan-link-${txHash}" target="_blank" rel="noopener noreferrer"><div class="loading-div" id="loading-div-${txHash}">PROCESSING<span class="one">.</span><span class="two">.</span><span class="three">.</span>​<br>CLICK FOR POLYGONSCAN</div></a><br>`;
   $("#pending-transactions").append(loadingDiv);
   pendingTransactions.add(tx);
 }
@@ -286,7 +286,7 @@ async function endLoading(tx, txStatus) {
     $(`#loading-div-${txHash}`).addClass("failure");
   }
   $(`#loading-div-${txHash}`).append(
-    `TRANSACTION ${status}.<br>VIEW ON ETHERSCAN.`
+    `TRANSACTION ${status}.<br>VIEW ON POLYGONSCAN.`
   );
   await sleep(7000);
   $(`#etherscan-link-${txHash}`).remove();
