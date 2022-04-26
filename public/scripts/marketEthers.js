@@ -58,7 +58,6 @@ async function addNetwork(type) {
       network = await getChainId();
       netID = network.toString();
       var params;
-      if (isTestnet == "false") {
           if (netID == "137") {
               alert("Polygon Network has already been added to Metamask.");
               return;
@@ -80,9 +79,6 @@ async function addNetwork(type) {
       window.ethereum.request({ method: 'wallet_addEthereumChain', params })
           .then(() => console.log('Success'))
           .catch((error) => console.log("Error", error.message));
-  } else {
-      alert('Unable to locate a compatible web3 browser!');
-  }
 }
 
 // General Variables
