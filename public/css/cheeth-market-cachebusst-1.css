@@ -114,7 +114,7 @@ p {
 
 #discord.failure,
 #discord-mobile.failure {
-  background-color: #f72119 !important;
+  background-color: #da6267 !important;
 }
 
 #discord.failure:hover,
@@ -245,7 +245,7 @@ p {
 }
 
 .button:hover {
-  background-color: #f8e4a9;
+  background-color: #f7e694;
   color: #333333;
 }
 
@@ -258,7 +258,7 @@ p {
 }
 
 .link:hover {
-  color: #f8e4a9;
+  color: #f7e694;
 }
 
 .section-title {
@@ -299,7 +299,7 @@ h5 {
   width: 100%;
   text-decoration: none;
   height: 5%;
-  background-color: #f8e4a9;
+  background-color: #f7e694;
   border: solid white 0.3em;
   color: black;
   font-size: 1.2vw;
@@ -433,7 +433,7 @@ h5 {
 }
 
 .failure {
-  background-color: #f72119 !important;
+  background-color: #da6267 !important;
 }
 
 #block-screen,
