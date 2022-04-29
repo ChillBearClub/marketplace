@@ -202,7 +202,8 @@ setInterval(async () => {
         );
         let distance = endTime - now;
 
-        var hours = Math.floor(distance / (60 * 60));
+        var days = Math.floor(distance / (60 * 60 * 24));
+        var hours = Math.floor((distance % (60 * 60 * 24)) / (60 * 60));
         var minutes = Math.floor((distance % (60 * 60)) / 60);
         var seconds = Math.floor(distance % 60);
 
@@ -230,7 +231,7 @@ setInterval(async () => {
             );
           }
         } else {
-          $(`#timer-${id}`).html(`ENDS IN ${hours}:${minutes}:${seconds}`);
+          $(`#timer-${id}`).html(`ENDS IN ${days}d ${hours}:${minutes}:${seconds}`);
           $(`#timer-${id}`).addClass("pending");
         }
       }
@@ -249,7 +250,9 @@ setInterval(async () => {
         );
         let distance = startTime - now;
 
-        var hours = Math.floor(distance / (60 * 60));
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (60 * 60 * 24));
+        var hours = Math.floor((distance % (60 * 60 * 24)) / (60 * 60));
         var minutes = Math.floor((distance % (60 * 60)) / 60);
         var seconds = Math.floor(distance % 60);
 
@@ -277,7 +280,7 @@ setInterval(async () => {
             );
           }
         } else {
-          $(`#timer-${id}`).html(`LIVE IN ${hours}:${minutes}:${seconds}`);
+          $(`#timer-${id}`).html(`LIVE IN ${days}d ${hours}:${minutes}:${seconds}`);
           $(`#timer-${id}`).addClass("pending");
         }
       }
