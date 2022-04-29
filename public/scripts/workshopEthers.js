@@ -166,19 +166,9 @@ const addListing = async () => {
       ) {
         await displayErrorMessage("Missing fields!");
       } else {
-        await market
-          .addWLVendingItem(cheethAddress, [
-            title,
-            image,
-            site,
-            description,
-            amount,
-            0,
-            start,
-            deadline,
-            price,
-          ])
-          .then(async (tx_) => {
+        const gasLimit = await market.estimateGas.addWLVendingItem(currentProjectAddress, [title, image, site, description, amount, 0, start, deadline, price]);
+        const newGasLimit = parseInt((gasLimit * 1.15)).toString();
+        await market.addWLVendingItem(currentProjectAddress, [title, image, site, description, amount, 0, start, deadline, price], {gasLimit: newGasLimit}).then( async(tx_) => {
             await waitForTransaction(tx_);
           });
       }
@@ -196,7 +186,7 @@ const addListing = async () => {
       await displayErrorMessage(
         "An error occurred. See console and window alert for details..."
       );
-      window.alert(error);
+      window.alert(JSON.stringify(error));
       console.log(error);
     }
   }
@@ -363,19 +353,9 @@ const modifyListing = async () => {
     } else if (start > deadline) {
       await displayErrorMessage("Error: Start time must be before deadline!");
     } else {
-      await market
-        .modifyWLVendingItem(cheethAddress, currentlySelected, [
-          title,
-          image,
-          siteFormatted,
-          description,
-          amount,
-          purchased,
-          start,
-          deadline,
-          price,
-        ])
-        .then(async (tx_) => {
+      const gasLimit = await market.estimateGas.modifyWLVendingItem(currentlySelectedContract, currentlySelectedListing, [title, image, siteFormatted, description, amount, purchased, start, deadline, price]);
+      const newGasLimit = parseInt((gasLimit * 1.15)).toString();
+      await market.modifyWLVendingItem(currentlySelectedContract, currentlySelectedListing, [title, image, siteFormatted, description, amount, purchased, start, deadline, price], {gasLimit: newGasLimit}).then( async(tx_) => {
           await waitForTransaction(tx_);
         });
     }
@@ -392,7 +372,7 @@ const modifyListing = async () => {
       await displayErrorMessage(
         "An error occurred. See console and window alert for details..."
       );
-      window.alert(error);
+      window.alert(JSON.stringify(error));
       console.log(error);
     }
   }
