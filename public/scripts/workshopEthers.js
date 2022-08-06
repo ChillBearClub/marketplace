@@ -166,9 +166,9 @@ const addListing = async () => {
       ) {
         await displayErrorMessage("Missing fields!");
       } else {
-        const gasLimit = await market.estimateGas.addWLVendingItem(currentProjectAddress, [title, image, site, description, amount, 0, start, deadline, price]);
+        const gasLimit = await market.estimateGas.addWLVendingItem(cheethAddress, [title, image, site, description, amount, 0, start, deadline, price]);
         const newGasLimit = parseInt((gasLimit * 1.15)).toString();
-        await market.addWLVendingItem(currentProjectAddress, [title, image, site, description, amount, 0, start, deadline, price], {gasLimit: newGasLimit}).then( async(tx_) => {
+        await market.addWLVendingItem(cheethAddress, [title, image, site, description, amount, 0, start, deadline, price], {gasLimit: newGasLimit}).then( async(tx_) => {
             await waitForTransaction(tx_);
           });
       }
@@ -353,9 +353,9 @@ const modifyListing = async () => {
     } else if (start > deadline) {
       await displayErrorMessage("Error: Start time must be before deadline!");
     } else {
-      const gasLimit = await market.estimateGas.modifyWLVendingItem(marketAddress, currentlySelectedListing, [title, image, siteFormatted, description, amount, purchased, start, deadline, price]);
+      const gasLimit = await market.estimateGas.modifyWLVendingItem(cheethAddress, currentlySelected, [title, image, siteFormatted, description, amount, purchased, start, deadline, price]);
       const newGasLimit = parseInt((gasLimit * 1.15)).toString();
-      await market.modifyWLVendingItem(marketAddress, currentlySelectedListing, [title, image, siteFormatted, description, amount, purchased, start, deadline, price], {gasLimit: newGasLimit}).then( async(tx_) => {
+      await market.modifyWLVendingItem(cheethAddress, currentlySelected, [title, image, siteFormatted, description, amount, purchased, start, deadline, price], {gasLimit: newGasLimit}).then( async(tx_) => {
           await waitForTransaction(tx_);
         });
     }
